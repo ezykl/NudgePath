@@ -64,7 +64,19 @@ function MyJobsTable({
           </TableRow>
         </TableHeader>
         <TableBody>
-          {jobs.map((job: JobResponse) => {
+          {jobs.length === 0 ? (
+            <TableRow>
+              <TableCell colSpan={9} className="h-44 text-center">
+                <div className="flex flex-col items-center justify-center gap-1.5 text-muted-foreground">
+                  <p className="text-sm font-medium text-foreground">No applications found</p>
+                  <p className="text-xs text-muted-foreground max-w-sm">
+                    Try adjusting your search filters or click &quot;Add Job&quot; above to log your first opportunity.
+                  </p>
+                </div>
+              </TableCell>
+            </TableRow>
+          ) : (
+            jobs.map((job: JobResponse) => {
             return (
               <TableRow key={job.id}>
                 <TableCell className="hidden sm:table-cell">
@@ -72,10 +84,10 @@ function MyJobsTable({
                   <img
                     alt="Company logo"
                     className="rounded-md object-cover h-8 w-8 min-w-8"
-                    src={job.Company?.logoUrl || "/images/jobsync-logo.svg"}
+                    src={job.Company?.logoUrl || "/images/nudgepath-logo.svg"}
                     onError={(e) => {
                       e.currentTarget.onerror = null;
-                      e.currentTarget.src = "/images/jobsync-logo.svg";
+                      e.currentTarget.src = "/images/nudgepath-logo.svg";
                     }}
                   />
                 </TableCell>
@@ -131,7 +143,7 @@ function MyJobsTable({
                 </TableCell>
               </TableRow>
             );
-          })}
+          }))}
         </TableBody>
       </Table>
       <DeleteAlertDialog

@@ -101,13 +101,13 @@ describe("DataSettings", () => {
   });
 
   it("shows the error message the route returned", async () => {
-    mockFetch({ error: "This backup was made by a different version of JobSync." }, false);
+    mockFetch({ error: "This backup was made by a different version of NudgePath." }, false);
     render(<DataSettings />);
     await userEvent.upload(screen.getByLabelText(/backup file/i), pickFile());
     const { toastError } = await import("@/lib/toast");
     await waitFor(() =>
       expect(toastError).toHaveBeenCalledWith(
-        "This backup was made by a different version of JobSync.",
+        "This backup was made by a different version of NudgePath.",
         expect.anything(),
       ),
     );

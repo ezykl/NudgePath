@@ -31,12 +31,12 @@ export function SupportDialog({
           <DialogTitle>Support</DialogTitle>
           <DialogDescription>
             <a
-              href="https://github.com/Gsync/jobsync/issues"
+              href="https://github.com/ezykl/NudgePath/issues"
               target="_blank"
               rel="noopener noreferrer"
               className="text-primary hover:underline"
             >
-              https://github.com/Gsync/jobsync/issues
+              https://github.com/ezykl/NudgePath/issues
             </a>
           </DialogDescription>
         </DialogHeader>
@@ -60,16 +60,8 @@ export function SupportDialog({
           <div className="space-y-2">
             <h3 className="text-sm font-semibold">Copyright</h3>
             <p className="text-sm text-muted-foreground">
-              © {currentYear} JobSync. All rights reserved.
+              © {currentYear} NudgePath. All rights reserved.
             </p>
-            <a
-              href="https://jobsync.ca/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm text-primary hover:underline"
-            >
-              https://jobsync.ca/
-            </a>
           </div>
         </div>
       </DialogContent>

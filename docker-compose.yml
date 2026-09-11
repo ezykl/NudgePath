@@ -1,7 +1,7 @@
 services:
   app:
     image: ghcr.io/gsync/jobsync:latest
-    container_name: jobsync_app
+    container_name: nudgepath_app
     ports:
       - "3737:3737"
     environment:
@@ -20,7 +20,7 @@ services:
       - OPENROUTER_API_KEY=${OPENROUTER_API_KEY:-}
       - RAPIDAPI_KEY=${RAPIDAPI_KEY:-}
     volumes:
-      - ./jobsyncdb/data:/data
+      - ./nudgepathdb/data:/data
     extra_hosts:
       - "host.docker.internal:host-gateway"
     restart: unless-stopped

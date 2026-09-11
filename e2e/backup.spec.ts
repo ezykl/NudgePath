@@ -9,7 +9,7 @@ test.describe("data backup", () => {
     await page.getByRole("link", { name: /download backup/i }).click();
     const download = await downloadPromise;
 
-    expect(download.suggestedFilename()).toMatch(/^jobsync-backup-\d{4}-\d{2}-\d{2}\.zip$/);
+    expect(download.suggestedFilename()).toMatch(/^nudgepath-backup-\d{4}-\d{2}-\d{2}\.zip$/);
     const stream = await download.createReadStream();
     const chunks: Buffer[] = [];
     for await (const chunk of stream) chunks.push(chunk as Buffer);

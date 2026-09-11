@@ -29,10 +29,15 @@ async function Header() {
             <SheetClose asChild>
               <Link
                 href="/dashboard"
-                className="group flex h-10 w-10 shrink-0 items-center justify-center gap-2 rounded-full bg-primary text-lg font-semibold text-primary-foreground md:text-base"
+                className="group flex h-10 w-10 shrink-0 items-center justify-center gap-2 rounded-lg text-primary-foreground md:text-base"
               >
-                <Briefcase className="h-5 w-5 transition-all group-hover:scale-110" />
-                <span className="sr-only">JobSync</span>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/images/nudgepath-logo.svg"
+                  alt="NudgePath"
+                  className="h-8 w-8 object-contain drop-shadow transition-transform group-hover:scale-105"
+                />
+                <span className="sr-only">NudgePath</span>
               </Link>
             </SheetClose>
             {SIDEBAR_LINKS.map((item) => {
@@ -57,7 +62,7 @@ async function Header() {
       </Sheet>
       <SidebarToggle />
       <h1 className="font-semibold">
-        JobSync<span className="hidden sm:inline"> - Job Search Assistant</span>
+        NudgePath<span className="hidden sm:inline"> — Your Career Companion</span>
       </h1>
       <div className="relative ml-auto flex-1 md:grow-0">
         {/* <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />

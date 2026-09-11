@@ -1,0 +1,17 @@
+﻿services:
+  - type: web
+    name: nudgepath
+    runtime: docker
+    plan: free
+    healthCheckPath: /api/version
+    envVars:
+      - key: DATABASE_URL
+        value: file:/data/dev.db
+      - key: MCP_ENABLED
+        value: "true"
+      - key: AUTH_SECRET
+        generateValue: true
+    disk:
+      name: nudgepath-data
+      mountPath: /data
+      sizeGB: 1

@@ -83,11 +83,11 @@ export default function RecentCardToggle({
     <Card className="mb-2 @3xl/main:absolute @3xl/main:inset-0 @3xl/main:mb-0 @3xl/main:flex @3xl/main:flex-col">
       <CardHeader>
         <div className="flex items-center justify-between gap-2">
-          <CardTitle className="text-lg text-green-600 min-w-0 truncate">
+          <CardTitle className="text-base font-semibold tracking-tight text-foreground min-w-0 truncate">
             Recent {tabs[activeIndex]}
           </CardTitle>
           <div
-            className="flex shrink-0 rounded-md border text-xs"
+            className="flex shrink-0 rounded-lg border border-border/80 bg-muted/40 p-0.5 text-xs"
             data-testid="recent-card-toggle-group"
           >
             {tabs.map((tab, index) => (
@@ -95,12 +95,10 @@ export default function RecentCardToggle({
                 key={tab}
                 onClick={() => selectTab(index)}
                 className={cn(
-                  "px-2 py-1 transition-colors",
-                  index === 0 && "rounded-l-md",
-                  index === tabs.length - 1 && "rounded-r-md",
+                  "rounded-md px-2.5 py-1 font-medium transition-all duration-150",
                   activeIndex === index
-                    ? "bg-primary text-primary-foreground"
-                    : "hover:bg-muted",
+                    ? "bg-background text-foreground shadow-xs"
+                    : "text-muted-foreground hover:text-foreground",
                 )}
               >
                 {tab}
@@ -120,10 +118,10 @@ export default function RecentCardToggle({
                   <div key={job.id} className="flex items-center gap-4">
                     <Avatar className="hidden h-8 w-8 sm:flex">
                       <AvatarImage
-                        src={job.Company?.logoUrl || "/images/jobsync-logo.svg"}
+                        src={job.Company?.logoUrl || "/images/nudgepath-logo.svg"}
                         alt="Avatar"
                       />
-                      <AvatarFallback>JS</AvatarFallback>
+                      <AvatarFallback>NP</AvatarFallback>
                     </Avatar>
                     <Link href={`/dashboard/myjobs/${job?.id}`} className="min-w-0">
                       <div className="grid gap-1">
@@ -168,7 +166,7 @@ export default function RecentCardToggle({
                         className="h-9 w-9 shrink-0 opacity-0 group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity duration-300"
                       >
                         <span>
-                          <CirclePlay className="text-green-600 h-6 w-6" />
+                          <CirclePlay className="text-primary h-6 w-6" />
                         </span>
                       </Button>
                       <div className="grid gap-1 min-w-0 flex-1">

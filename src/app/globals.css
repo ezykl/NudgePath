@@ -85,9 +85,9 @@
   .dark {
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
-    --card: 222.2 84% 4.9%;
+    --card: 222.2 47.4% 11.2%;
     --card-foreground: 210 40% 98%;
-    --popover: 222.2 84% 4.9%;
+    --popover: 222.2 47.4% 11.2%;
     --popover-foreground: 210 40% 98%;
     --primary: 217.2 91.2% 59.8%;
     --primary-foreground: 222.2 47.4% 11.2%;
@@ -99,8 +99,8 @@
     --accent-foreground: 210 40% 98%;
     --destructive: 0 62.8% 40.6%;
     --destructive-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 23.5%;
-    --input: 217.2 32.6% 21.5%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
     --ring: 224.3 76.3% 48%;
     --chart-1: 220 70% 50%;
     --chart-2: 160 60% 45%;
@@ -193,11 +193,11 @@
 }
 
 @utility sidebar-logo {
-  @apply 2xl:text-26 text-[26px] text-blue-500 font-bold max-xl:hidden;
+  @apply 2xl:text-26 text-[26px] text-primary font-bold max-xl:hidden;
 }
 
 @utility sidebar-link {
-  @apply flex gap-3 items-center text-blue-500 py-1 md:p-3 2xl:p-4 rounded-lg justify-center xl:justify-start;
+  @apply flex gap-3 items-center text-primary py-1 md:p-3 2xl:p-4 rounded-lg justify-center xl:justify-start;
 }
 
 @utility sidebar-label {

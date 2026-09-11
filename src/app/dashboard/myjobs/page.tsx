@@ -8,7 +8,7 @@ import { getAllJobLocations } from "@/actions/jobLocation.actions";
 import { getAllTags } from "@/actions/tag.actions";
 
 export const metadata: Metadata = {
-  title: "My Jobs | JobSync",
+  title: "My Jobs | NudgePath",
 };
 
 async function MyJobs() {

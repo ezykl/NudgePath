@@ -1,4 +1,4 @@
-# JobSync Deployment Script (Windows / PowerShell)
+# NudgePath Deployment Script (Windows / PowerShell)
 # Usage: .\deploy.ps1 [branch-name]
 # Example: .\deploy.ps1 main
 # Example: .\deploy.ps1 develop
@@ -21,7 +21,7 @@ function Assert-LastExit($msg) {
 }
 
 Write-Host "========================================" -ForegroundColor Yellow
-Write-Host "JobSync Deployment Script" -ForegroundColor Yellow
+Write-Host "NudgePath Deployment Script" -ForegroundColor Yellow
 Write-Host "========================================" -ForegroundColor Yellow
 Write-Host ""
 

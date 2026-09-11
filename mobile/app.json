@@ -1,0 +1,43 @@
+{
+  "expo": {
+    "name": "NudgePath",
+    "slug": "nudgepath-mobile",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "dark",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#090d16"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.nudgepath.mobile",
+      "infoPlist": {
+        "NSCameraUsageDescription": "NudgePath needs camera access to scan pairing QR codes from your web dashboard."
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#090d16"
+      },
+      "package": "com.nudgepath.mobile",
+      "permissions": [
+        "android.permission.CAMERA"
+      ]
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "NudgePath needs camera access to scan pairing QR codes from your web dashboard."
+        }
+      ]
+    ]
+  }
+}

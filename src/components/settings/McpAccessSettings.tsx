@@ -87,7 +87,7 @@ function TokenRevealDialog({
   const ocSnippet = JSON.stringify(
     {
       mcpServers: {
-        jobsync: {
+        nudgepath: {
           type: "streamable-http",
           url: mcpUrl,
           headers: { Authorization: `Bearer ${token}` },
@@ -212,7 +212,7 @@ export default function McpAccessSettings() {
       <Card>
         <CardHeader>
           <CardTitle className="text-lg font-medium">MCP Endpoint</CardTitle>
-          <CardDescription>Connect AI agents to JobSync via the Model Context Protocol.</CardDescription>
+          <CardDescription>Connect AI agents to NudgePath via the Model Context Protocol.</CardDescription>
         </CardHeader>
         <CardContent>
           <div className="space-y-1">

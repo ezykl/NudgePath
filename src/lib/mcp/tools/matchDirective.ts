@@ -19,14 +19,14 @@ export function buildMatchDirective(
     completeness === "partial"
       ? `\n\nPARTIAL DESCRIPTION WARNING: this posting is under ` +
         `${APP_CONSTANTS.DESCRIPTION_FULL_MIN_WORDS} words, so any score you ` +
-        `produce is provisional and will be labelled as such in JobSync. Weight ` +
+        `produce is provisional and will be labelled as such in NudgePath. Weight ` +
         `your confidence accordingly, say plainly in the body what the ` +
         `description does not tell you, and if you can fetch the full posting, ` +
         `call update_job with it first and score the enriched version instead.`
       : "";
 
   return (
-    `Produce a job-fit match of JobSync job id ${jobId} against the user's ` +
+    `Produce a job-fit match of NudgePath job id ${jobId} against the user's ` +
     `default resume, shown below.${warning}\n\n` +
     `DEFAULT RESUME (normalized):\n${normalizedResumeText}\n\n` +
     `INSTRUCTIONS:\n` +

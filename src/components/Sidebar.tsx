@@ -40,19 +40,24 @@ function Sidebar({ user, signOutAction }: SidebarProps) {
               onClick={(e) => {
                 if (isOnDashboard) e.preventDefault();
               }}
-              className="group flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground md:h-8 md:w-8"
+              className="group flex h-9 w-9 shrink-0 items-center justify-center rounded-lg text-primary-foreground transition-transform hover:scale-105 md:h-8 md:w-8"
             >
-              <Briefcase className="h-4 w-4 transition-transform group-hover:scale-110" />
-              <span className="sr-only">JobSync</span>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/images/nudgepath-logo.svg"
+                alt="NudgePath"
+                className="h-8 w-8 object-contain drop-shadow"
+              />
+              <span className="sr-only">NudgePath</span>
             </Link>
           </div>
           <span
             className={cn(
-              "truncate font-semibold transition-opacity duration-200",
+              "truncate font-bold tracking-tight text-lg text-foreground transition-opacity duration-200",
               expanded ? "opacity-100 delay-100" : "opacity-0",
             )}
           >
-            JobSync
+            NudgePath
           </span>
         </div>
 

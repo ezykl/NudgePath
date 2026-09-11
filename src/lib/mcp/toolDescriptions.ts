@@ -4,9 +4,9 @@
 // server registers instead of a copy that silently drifts.
 export const MCP_TOOL_DESCRIPTIONS = {
   add_job:
-    "Add a job application to JobSync. Resolves or creates company, job title, location, and source by name. Returns a transparency report of what was matched vs. created.",
+    "Add a job application to NudgePath. Resolves or creates company, job title, location, and source by name. Returns a transparency report of what was matched vs. created.",
   find_job:
-    "Look up whether a job posting is already saved in JobSync, by URL. Call this before add_job when re-running a search. With no URL to look up, use add_job's upsert instead of skipping dedupe.",
+    "Look up whether a job posting is already saved in NudgePath, by URL. Call this before add_job when re-running a search. With no URL to look up, use add_job's upsert instead of skipping dedupe.",
   update_job:
     "Correct or enrich a job previously added through MCP. Only the fields you supply change. Supplying a fuller jobDescription re-classifies the posting and requests a fresh match analysis — use this instead of re-adding with allowDuplicate.",
   add_question:

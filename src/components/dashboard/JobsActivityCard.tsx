@@ -71,14 +71,14 @@ export default function JobsActivityCard({ data }: JobsActivityCardProps) {
   const slices = buildDonutSlices(topActivities, otherHours, theme);
 
   return (
-    <Card className="@lg:col-span-2">
+    <Card className="@lg:col-span-2 rounded-2xl border-border/40 bg-card/40 backdrop-blur-xs shadow-xs">
       <CardHeader className="pb-2">
         <div className="flex items-center justify-between gap-2">
-          <CardTitle className="text-lg text-green-600 min-w-0 truncate">
+          <CardTitle className="text-base font-semibold tracking-tight text-foreground min-w-0 truncate">
             Jobs &amp; Activity
           </CardTitle>
           <div
-            className="flex shrink-0 rounded-md border text-xs"
+            className="flex shrink-0 rounded-lg border border-border/60 bg-muted/30 p-0.5 text-xs"
             data-testid="jobs-activity-toggle-group"
           >
             {data.map((item, index) => (
@@ -86,12 +86,10 @@ export default function JobsActivityCard({ data }: JobsActivityCardProps) {
                 key={item.label}
                 onClick={() => selectTab(index)}
                 className={cn(
-                  "px-2 py-1 transition-colors",
-                  index === 0 && "rounded-l-md",
-                  index === data.length - 1 && "rounded-r-md",
+                  "rounded-md px-2.5 py-1 font-medium transition-all duration-150",
                   activeIndex === index
-                    ? "bg-primary text-primary-foreground"
-                    : "hover:bg-muted",
+                    ? "bg-background text-foreground shadow-xs"
+                    : "text-muted-foreground hover:text-foreground",
                 )}
               >
                 {item.label}
@@ -104,8 +102,8 @@ export default function JobsActivityCard({ data }: JobsActivityCardProps) {
         <div className="relative h-[200px] w-full">
           {slices.length === 0 ? (
             <div className="flex h-full w-full items-center justify-center">
-              <div className="h-[132px] w-[132px] rounded-full border-[18px] border-muted" />
-              <p className="absolute inset-x-0 bottom-0 text-center text-sm text-muted-foreground">
+              <div className="h-[128px] w-[128px] rounded-full border-[16px] border-muted/50" />
+              <p className="absolute inset-x-0 bottom-0 text-center text-xs text-muted-foreground">
                 No activities recorded
               </p>
             </div>
@@ -139,13 +137,13 @@ export default function JobsActivityCard({ data }: JobsActivityCardProps) {
                   style={{
                     background: "#1e293b",
                     color: "#fff",
-                    padding: "6px 12px",
+                    padding: "4px 8px",
                     borderRadius: "4px",
-                    fontSize: "12px",
-                    whiteSpace: "nowrap",
+                    fontSize: "11px",
                   }}
                 >
-                  <strong>{datum.data.label}</strong> — {datum.value}h
+                  <span style={{ color: datum.data.color }}>●</span>{" "}
+                  {datum.data.label}: {datum.data.hours}h
                 </div>
               )}
             />
@@ -154,17 +152,19 @@ export default function JobsActivityCard({ data }: JobsActivityCardProps) {
             className="pointer-events-none absolute inset-0 flex flex-col items-center justify-center gap-px text-center"
             data-testid="jobs-activity-total"
           >
-            <span className="text-xl font-bold leading-tight tabular-nums">
+            <span className="text-xl font-bold leading-tight tracking-tight tabular-nums">
               {totalHours}h
             </span>
-            <span className="text-sm text-muted-foreground tabular-nums">
+            <span className="text-xs text-muted-foreground tabular-nums">
               {jobsApplied} {jobsApplied === 1 ? "job" : "jobs"}
             </span>
             {jobsTrend !== 0 && (
               <span
                 className={cn(
-                  "flex items-center gap-0.5 text-[10px] tabular-nums",
-                  jobsTrend > 0 ? "text-emerald-600" : "text-rose-600",
+                  "inline-flex items-center gap-0.5 rounded-full px-1.5 py-0.5 text-[10px] font-semibold tabular-nums",
+                  jobsTrend > 0
+                    ? "bg-emerald-500/10 text-emerald-500"
+                    : "bg-rose-500/10 text-rose-500",
                 )}
               >
                 {jobsTrend > 0 ? (

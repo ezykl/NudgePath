@@ -7,17 +7,18 @@ import type { PrismaClient } from "@prisma/client";
 import { JOB_SOURCES, JOB_STATUSES } from "@/lib/constants";
 
 export function makeTestDbUrl(): { url: string; dir: string } {
-  const dir = fs.mkdtempSync(path.join(os.tmpdir(), "jobsync-backup-"));
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), "nudgepath-backup-"));
   return { url: `file:${path.join(dir, "test.db")}`, dir };
 }
 
 // db push rather than migrate deploy: the round-trip asserts against the
 // current schema, not the migration history, and push is much faster.
 export function pushSchema(url: string): void {
+  const npxCmd = process.platform === "win32" ? "npx.cmd" : "npx";
   execFileSync(
-    "npx",
+    npxCmd,
     ["prisma", "db", "push", "--skip-generate", "--accept-data-loss"],
-    { env: { ...process.env, DATABASE_URL: url }, stdio: "pipe" },
+    { env: { ...process.env, DATABASE_URL: url }, stdio: "pipe", shell: process.platform === "win32" },
   );
 }
 

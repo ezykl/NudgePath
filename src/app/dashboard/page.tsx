@@ -7,6 +7,7 @@ import {
   getRecentJobs,
 } from "@/actions/dashboard.actions";
 import ActivityCalendar from "@/components/dashboard/ActivityCalendar";
+import CareerNudgeBanner from "@/components/dashboard/CareerNudgeBanner";
 import JobsActivityCard from "@/components/dashboard/JobsActivityCard";
 import JobsApplied from "@/components/dashboard/JobsAppliedCard";
 import RecentCardToggle from "@/components/dashboard/RecentCardToggle";
@@ -47,8 +48,9 @@ export default async function Dashboard() {
     );
   return (
     <>
-      <div className="@container grid grid-cols-1 auto-rows-max items-start gap-2 md:gap-2 @3xl/main:col-span-2">
-        <div className="grid gap-2 @lg:grid-cols-4">
+      <div className="@container grid grid-cols-1 auto-rows-max items-start gap-4 md:gap-4 @3xl/main:col-span-2">
+        <CareerNudgeBanner />
+        <div className="grid gap-4 @lg:grid-cols-4">
           <JobsApplied />
           <JobsActivityCard
             data={[

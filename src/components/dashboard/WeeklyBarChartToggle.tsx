@@ -82,17 +82,17 @@ export default function WeeklyBarChartToggle({
       <CardHeader className="pb-3">
         <div className="flex items-center justify-between gap-2 mb-1 mt-3">
           <div className="flex items-baseline gap-2 min-w-0">
-            <CardTitle className="text-lg text-green-600 truncate">
+            <CardTitle className="text-base font-semibold tracking-tight text-foreground truncate">
               Weekly {current.label}
             </CardTitle>
             {totalHours !== null && (
-              <span className="text-sm text-muted-foreground whitespace-nowrap">
+              <span className="text-xs text-muted-foreground whitespace-nowrap tabular-nums">
                 {totalHours.toFixed(1)} hrs
               </span>
             )}
           </div>
           <div
-            className="flex shrink-0 rounded-md border text-xs"
+            className="flex shrink-0 rounded-lg border border-border/80 bg-muted/40 p-0.5 text-xs"
             data-testid="weekly-chart-toggle-group"
           >
             {charts.map((chart, index) => (
@@ -100,12 +100,10 @@ export default function WeeklyBarChartToggle({
                 key={chart.label}
                 onClick={() => selectTab(index)}
                 className={cn(
-                  "px-2 py-1 transition-colors",
-                  index === 0 && "rounded-l-md",
-                  index === charts.length - 1 && "rounded-r-md",
+                  "rounded-md px-2.5 py-1 font-medium transition-all duration-150",
                   activeIndex === index
-                    ? "bg-primary text-primary-foreground"
-                    : "hover:bg-muted",
+                    ? "bg-background text-foreground shadow-xs"
+                    : "text-muted-foreground hover:text-foreground",
                 )}
               >
                 {chart.label}

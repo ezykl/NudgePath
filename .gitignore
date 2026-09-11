@@ -3,6 +3,8 @@
 # dependencies
 /node_modules
 /evals/node_modules
+mobile/node_modules/
+mobile/.expo/
 /.pnp
 .pnp.js
 .yarn/install-state.gz

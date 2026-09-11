@@ -27,7 +27,7 @@ export function CoverLetterDocument({
   return (
     <Document
       author={`${contactInfo?.firstName ?? ""} ${contactInfo?.lastName ?? ""}`.trim()}
-      creator="jobsync.ca"
+      creator="nudgepath"
       producer="react-pdf"
       title={title}
     >

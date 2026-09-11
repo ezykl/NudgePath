@@ -15,10 +15,10 @@ const inter = localFont({
 
 export const metadata: Metadata = {
   title: {
-    template: "%s | JobSync",
-    default: "JobSync",
+    template: "%s | NudgePath",
+    default: "NudgePath",
   },
-  description: "Job Application Tracking System",
+  description: "NudgePath — Your Career Companion",
 };
 
 interface Props {

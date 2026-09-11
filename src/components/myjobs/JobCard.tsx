@@ -34,10 +34,10 @@ export function JobCard({
         <img
           alt="Company logo"
           className="h-10 w-10 min-w-10 rounded-md object-cover"
-          src={job.Company?.logoUrl || "/images/jobsync-logo.svg"}
+          src={job.Company?.logoUrl || "/images/nudgepath-logo.svg"}
           onError={(e) => {
             e.currentTarget.onerror = null;
-            e.currentTarget.src = "/images/jobsync-logo.svg";
+            e.currentTarget.src = "/images/nudgepath-logo.svg";
           }}
         />
         <div className="min-w-0 flex-1">

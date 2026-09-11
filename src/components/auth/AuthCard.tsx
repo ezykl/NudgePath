@@ -16,10 +16,16 @@ export default function AuthCard({ mode }: AuthCardProps) {
   return (
     <div className="mx-auto w-full max-w-md px-4">
       {/* App branding */}
-      <div className="mb-8 text-center">
-        <h1 className="text-3xl font-bold tracking-tight">JobSync</h1>
+      <div className="mb-8 text-center flex flex-col items-center">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/images/nudgepath-logo.svg"
+          alt="NudgePath"
+          className="mb-3 h-12 w-12 object-contain drop-shadow-md"
+        />
+        <h1 className="text-3xl font-bold tracking-tight">NudgePath</h1>
         <p className="mt-1 text-sm text-muted-foreground">
-          Track your job search, powered by AI
+          Your Career Companion
         </p>
       </div>
 
