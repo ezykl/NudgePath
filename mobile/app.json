@@ -37,7 +37,8 @@
         {
           "cameraPermission": "NudgePath needs camera access to scan pairing QR codes from your web dashboard."
         }
-      ]
+      ],
+      "expo-asset"
     ]
   }
 }
